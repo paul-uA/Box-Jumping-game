@@ -2,5 +2,73 @@ body{
     font-family: 'VT323', monospace;
     font-size: 25px;
     text-align: center;
-    background-image: url("https://w.wallhaven.cc/full/2k/wallhaven-2kgel9.jpg")
+    background-image: url("https://w.wallhaven.cc/full/2k/wallhaven-2kgel9.jpg");
+
+
+
+}
+
+.gamenNameB{
+    margin: 1px;
+    padding: 1px;
+}
+
+h1{
+    
+    margin: 1px;
+    padding: 1px;
+
+}
+h4{
+    
+    padding: 1px;
+    margin: 1px;
+}
+
+.gameSpace{
+    
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+    width: 500px;
+    height: 200px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+
+}
+
+#box{
+    width: 55px;
+    height: 55px;
+    background-color: midnightblue;
+    position: relative;
+    top: 145px;
+    
+}
+
+#triangle{
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 52px solid red;
+    position: relative;
+    left: 445px;
+    top: 94px;
+}
+
+#timeScore{
+    position: absolute;
+    top:10px;
+    right: 16px;
+    font-size: 25px;
+}
+
+.gameStuff{
+    
+    position: relative;
+    margin-top: 235px;
+    
+
 }

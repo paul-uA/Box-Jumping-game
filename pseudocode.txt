@@ -11,4 +11,41 @@ gamebuttons div will contain the start button and maybe a reset.
 ----------- css ------------
 this will contain the basic stile of the game 
 colors : purple green red 
-font : press start 2p 
+font : VT323
+create game screen and shapes needed to play
+
+-----------javascript------------
+
+start button that begins game
+
+use either "w" or arrow keys to make box jump over triangles
+
+if the box touches any triangles player loses game time is displayed as score 
+
+reset is asked of player 
+
+variables:
+timer / score
+startbutton click
+
+
+
+function startGame (button click){
+    timer starts and score tracker ();
+    triangles start to move ();
+    player (box) can move with arrow or 'w' keys();
+    checkiftouch();
+
+    } 
+
+function timerstart(){
+    set interval to update timer/score every second 
+
+}
+
+function movetriangles(){
+    somehow create ainmation of triangles moving across the game screen
+
+}
+
+
