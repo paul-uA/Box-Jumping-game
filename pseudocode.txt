@@ -1,0 +1,14 @@
+box jumping game
+
+---------- html ------------
+game title : Box jumping
+
+gamebox section will contain the game itself with animations
+
+gamebuttons div will contain the start button and maybe a reset.
+
+
+----------- css ------------
+this will contain the basic stile of the game 
+colors : purple green red 
+font : press start 2p 
