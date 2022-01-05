@@ -49,7 +49,7 @@ h4{
 }
 
 .boxJumpA{
-    animation: boxJump .4s linear;
+    animation: boxJump .5s linear;
 
 }
 
@@ -65,17 +65,18 @@ h4{
 #triangle{
     width: 0;
     height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 52px solid red;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 43px solid red;
     position: relative;
     left:590px;
-    top: 94px;
+    top: 102px;
+    /* animation: triangle 1s linear ; */
     
 }
 
 .slide2right{
-    animation: triangle 1s linear;
+    animation: triangle 1.3s linear infinite;
 
 }
 

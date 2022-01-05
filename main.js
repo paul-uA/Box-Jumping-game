@@ -4,6 +4,10 @@ let boxP = document.getElementById("box");
 let triRed = document.getElementById("triangle");
 let timeScorer = document.getElementById("timeScore");
 let startButton = document.getElementById("startButton");
+
+//let boxHeight = parseInt(window.getComputedStyle(boxP).getPropertyValue('top'));
+//let triangleXpos = parseInt(window.getComputedStyle(triRed).getPropertyValue('left'));
+
 let triangleEnd = 590;
 
 
@@ -18,29 +22,56 @@ function startTime(){
     let tt = 0
     //console.log("works");
     let uptime = setInterval(function (){
-    if ( end !== false){
         tt += 1;
         timeScorer.innerText= tt;
-    }}, 500);
+    }, 500);
 };
 
 function triangleMover (){
     let moveyMoverson = setInterval(function (){
         if (triRed.classList != "slide2right"){
-        triRed.classList.add("slide2right"); 
-        }
-        else 
-            triRed.classList.remove("slide2right");
+        triRed.classList.add("slide2right");}
         
-    },1000)   
+
+        let timeout =  setTimeout(function (){
+            //console.log("works");
+            triRed.classList.remove("slide2right");
+        },1300);
+                       
+    },1301)   
+
 };
 
+
+
 function jumpyJumperson (){
-    boxP.classList.add("boxJumpA");
-    let j = setTimeout(function (){
-        boxP.classList.remove("boxJumpA")      
-},400);
-}
+    if (boxP.classList !== "boxJumpA"){
+        boxP.classList.add("boxJumpA");}
+
+        let jtime = setTimeout(function(){
+            boxP.classList.remove("boxJumpA");
+        },500);
+
+};
+
+function death2Tri(){  
+    let gameOver = setInterval(function(){
+        if ( (parseInt(window.getComputedStyle(triRed).getPropertyValue('left'))< 81 ) && (parseInt(window.getComputedStyle(triRed).getPropertyValue('left')) > 25)&& (parseInt(window.getComputedStyle(boxP).getPropertyValue('top')) >= 98)){
+            clearInterval(moveyMoverson);
+            alert("Game Over!");
+        
+    }
+    },10); 
+
+};
+
+function gameStart(){
+    checkMcCheckerson();
+    startTime();
+    death2Tri();
+    triangleMover();
+};
     
-startButton.addEventListener("click", triangleMover);
-document.addEventListener("keydown",jumpyJumperson);
+ startButton.addEventListener("click", gameStart);
+ document.addEventListener("keydown",jumpyJumperson);
+
