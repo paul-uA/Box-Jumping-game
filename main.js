@@ -5,7 +5,8 @@ let triRed = document.getElementById("triangle");
 let timeScorer = document.getElementById("timeScore");
 let startButton = document.getElementById("startButton");
 let end = true;
-let speed = 10;
+let triangleEnd = 590;
+let speed = 25;
 
 
 
@@ -25,14 +26,14 @@ function startTime(){
 };
 
 function triangleMover (){
-    
-    let cordX =(document.getElementById("triangle").style.left);
-    console.log(cordX)
-    // if (cordX !== 0){
-    //     cordX = cordX - speed;
-    //     triRed.style.left = cordX +"px";
-    // }
-
+    let cordX = triangleEnd;
+    let movingTheTri = setInterval( function(){
+        if((cordX > 0) && (end === true) ) {
+            cordX = cordX - speed;
+            document.getElementById("triangle").style.left =cordX+"px" ;
+        }
+    }, 550);
+   
 }
     
 startButton.addEventListener("click", triangleMover);

@@ -29,7 +29,7 @@ h4{
     
     border-top: 3px solid black;
     border-bottom: 3px solid black;
-    width: 500px;
+    width: 650px;
     height: 200px;
     position: absolute;
     margin: auto;
@@ -44,6 +44,7 @@ h4{
     background-color: midnightblue;
     position: relative;
     top: 145px;
+    left: 50px;
     
 }
 
@@ -54,7 +55,7 @@ h4{
     border-right: 30px solid transparent;
     border-bottom: 52px solid red;
     position: relative;
-    left: 440px;
+    left:590px;
     top: 94px;
 }
 
