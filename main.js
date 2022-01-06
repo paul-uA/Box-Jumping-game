@@ -68,7 +68,7 @@ function jumpyJumperson (){
 
 function gameStart(){
     let youlose = false;
-    var audio = new Audio("./sounds/ga");
+    var audio = new Audio("./sounds/gameMusic.wav");
     audio.play();
     
     // checks if  you lose the game
