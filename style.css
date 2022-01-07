@@ -103,17 +103,18 @@ h4{
 }
 
 .modal {
-    display: none; 
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed; /* Stay in place */
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     background-color: rgba(0,0,0,.7);
     z-index: 1; /* Sit on top */
+    opacity: 0;
+    pointer-events: none;
     /* background-image: url("https://w.wallhaven.cc/full/vm/wallhaven-vm7yjm.jpg") ; */
     /* background-repeat: no-repeat;
     background-position: center;
@@ -122,6 +123,7 @@ h4{
 }
 
 .modal-content{
+    
     width: 500px;
     height: 360px;
     background-image: url("https://w.wallhaven.cc/full/vm/wallhaven-vm7yjm.jpg") ;
@@ -136,4 +138,8 @@ p{
     margin: 15% auto; /* 15% from the top and centered */
     padding: 1px;
     width: 80%; /* Could be more or less, depending on screen size */
+}
+.show{
+    opacity: 1;
+    pointer-events: auto;
 }
