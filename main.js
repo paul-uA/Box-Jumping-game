@@ -47,6 +47,9 @@ function jumpyJumperson (){
     if (boxP.classList !== "boxJumpA"){
         boxP.classList.add("boxJumpA");
         console.log("jump"); 
+        var jump = new Audio("./sounds/jump.wav");
+        jump.volume = .30;
+        jump.play();
     }
 
         let jtime = setTimeout(function(){
@@ -69,16 +72,18 @@ function jumpyJumperson (){
 function gameStart(){
     let youlose = false;
     var audio = new Audio("./sounds/gameMusic.wav");
+    audio.volume = .25;
     audio.play();
     
     // checks if  you lose the game
     let gameOver = setInterval(function(){
-        if ( (parseInt(window.getComputedStyle(triRed).getPropertyValue('left'))< 81 ) && (parseInt(window.getComputedStyle(triRed).getPropertyValue('left')) > 25)&& (parseInt(window.getComputedStyle(boxP).getPropertyValue('top')) >= 98)){
+        if ( (parseInt(window.getComputedStyle(triRed).getPropertyValue('left'))< h ) && (parseInt(window.getComputedStyle(triRed).getPropertyValue('left')) > 25)&& (parseInt(window.getComputedStyle(boxP).getPropertyValue('top')) >= 98)){
             clearInterval(moveyMoverson);
             youlose = true;
-            gameMusic.pause();
-            sound.currentTime = 0;
-            alert("Game Over!");
+            audio.pause();
+            audio.currentTime = 0;
+            //alert("Game Over!");
+            return location.reload();
         
     }
     },10); 
