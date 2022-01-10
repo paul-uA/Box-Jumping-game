@@ -15,17 +15,17 @@ the box appears to move to the left and triangles block your path and you need t
  ## MVP goals
  1. Create everything that is need for the game in HTML
     - [x] Title and Game space
-    - [x] The box where both shape will apear
+    - [x] TShe box where both shape will apear
     - [x] Create both Box and Triangle
  2. Add Styling to HTML so that the game is not just black and white.
     - [x] Define font to be use on page
-    - [x] style each element and format the look of each element so that the game looks as close to the Wireframe.
+    - [x] Style each element and format the look of each element so that the game looks as close to the Wireframe.
 3. Use Javascript to manipulate Dom and create game mechanics 
     - [x] Grab all DOM elements that are need to make the game work
-    - [x] create a function that moves the triangle across the screen and then reset so that it appears that a new one is on the track. 
-    - [x] create a function that allows the player to jump.
-    - [x] create a time / score function that is to be displayed in the top right corner.
-    - [x] create a function that checks for colision of the player Box and the Triangle. 
+    - [x] Create a function that moves the triangle across the screen and then reset so that it appears that a new one is on the track. 
+    - [x] Create a function that allows the player to jump.
+    - [x] Create a time / score function that is to be displayed in the top right corner.
+    - [x] Create a function that checks for colision of the player Box and the Triangle. 
 
  if this is completed then more features will be added. (such as)
  game messages (win, lose, current high score ...... and so on )
