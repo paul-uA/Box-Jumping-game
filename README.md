@@ -27,12 +27,18 @@ the box appears to move to the left and triangles block your path and you need t
     - [x] Create a time / score function that is to be displayed in the top right corner.
     - [x] Create a function that checks for colision of the player Box and the Triangle. 
 
- if this is completed then more features will be added. (such as)
+ If this is completed then more features will be added. (such as)
  game messages (win, lose, current high score ...... and so on )
  reset button on loss of game maybe in a modal?
  add more traingles aat random and maybe objects to duck under?
  sounds
 
+
+### Bugs and Problems
+
+This section is here to describe issues with the game that either I could not figure out how to implement or fix.
+ - The main issue was that the score could not be stopped for some reason with Clearinterval and save to be displayed and used to create a high score board.
+ - when adding in the class animations for both triangle and the box the check for the class being there and not being there doesn't seem to work properly.(Spammong the space bar at a fast rate will break the logic.) 
 
 
 https://paul-ua.github.io/Box-Jumping-game/
