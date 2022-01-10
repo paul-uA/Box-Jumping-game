@@ -1,4 +1,9 @@
 console.log("JS Loaded");
+if (typeof(Storage) !== "undefined") {
+    // Code for localStorage/sessionStorage.
+  } else {
+    console.log("Sorry! No Web Storage support.");
+  }
 
 let boxP = document.getElementById("box");
 let triRed = document.getElementById("triangle");
@@ -7,44 +12,15 @@ let startButton = document.getElementById("startButton");
 let endScreen = document.getElementById("gameOver");
 let restartG = document.getElementById("restart");
 let closeGame = document.getElementById("closeG");
+let StartMcGee = document.getElementById("startButton");
 
 //let boxHeight = parseInt(window.getComputedStyle(boxP).getPropertyValue('top'));
 //let triangleXpos = parseInt(window.getComputedStyle(triRed).getPropertyValue('left'));
 
 let triangleEnd = 590;
 let endscore = 0;
-
-
-
-
-function checkMcCheckerson(){
-    console.log("this checks out!");
-};
-
-
-function startTime(){
-    let tt = 0
-    //console.log("works");
-    let uptime = setInterval(function (){
-        tt += 1;
-        timeScorer.innerText= tt;
-    }, 500);
-};
-
-// function triangleMover (){
-//     let moveyMoverson = setInterval(function (){
-//         if (triRed.classList != "slide2right"){
-//         triRed.classList.add("slide2right");}
-                
-
-//         let timeout =  setTimeout(function (){
-//             //console.log("works");
-//             triRed.classList.remove("slide2right");
-//         },1300);
-                       
-//     },1301)    
-// };
-
+let uptime;
+let tt = 0
 
 
 function jumpyJumperson (evt){
@@ -52,7 +28,7 @@ function jumpyJumperson (evt){
 
     if (boxP.classList !== "boxJumpA"){
         boxP.classList.add("boxJumpA");
-        console.log("jump"); 
+       // console.log("jump"); 
         var jump = new Audio("./sounds/jump.wav");
         jump.volume = .30;
         jump.play();
@@ -64,38 +40,42 @@ function jumpyJumperson (evt){
 
 };
 
-// function death2Tri(){  
-//     let gameOver = setInterval(function(){
-//         if ( (parseInt(window.getComputedStyle(triRed).getPropertyValue('left'))< 81 ) && (parseInt(window.getComputedStyle(triRed).getPropertyValue('left')) > 25)&& (parseInt(window.getComputedStyle(boxP).getPropertyValue('top')) >= 98)){
-//             clearInterval(moveyMoverson);
-//             alert("Game Over!");
-        
-//     }
-//     },10); 
-
-// };
-
-function reSetG(){
-    
-    if (endscore < timeScorer.innerText)
-    endScreen.classList.remove("show");
 
 
-
-};
 
 function endGame(){
     endScreen.classList.remove("show");
+    Hidestart();
     return location.reload();
 
 };
 
-function gameStart(){
+function Hidestart() {
     
+    if (StartMcGee.style.display === "none") {
+        StartMcGee.style.display = "inline ";
+        StartMcGee.style.position = "relative" ;
+
+    } else {
+        StartMcGee.style.display = "none";
+    }
+  }; 
+ 
+function gameStart(){
+
+    Hidestart();
     let youlose = false;
     var audio = new Audio("./sounds/gameMusic.wav");
     audio.volume = .15;
     audio.play();
+
+    document.addEventListener("keydown",jumpyJumperson);
+
+    // increase time / score
+    uptime = setInterval(function (){
+        tt += 1;
+        timeScorer.innerText= tt;
+    }, 500);
 
      // moves the Triangle
      let moveyMoverson = setInterval(function (){
@@ -109,46 +89,33 @@ function gameStart(){
         },1300);
                        
     },1301) 
-    document.addEventListener("keydown",jumpyJumperson);
+    //document.addEventListener("keydown",jumpyJumperson);
     
     // checks if  you lose the game
     let gameOver = setInterval(function(){
         if ( (parseInt(window.getComputedStyle(triRed).getPropertyValue('left'))< 80 ) && (parseInt(window.getComputedStyle(triRed).getPropertyValue('left')) > 25)&& (parseInt(window.getComputedStyle(boxP).getPropertyValue('top')) >= 105)){
+            audio.pause(); 
             clearInterval(moveyMoverson);
+            // clearInterval(uptime);
+            // console.log(uptime);
             youlose = true;
-            audio.pause();
             audio.currentTime = 0;
             endscore = parseInt(timeScorer.innerText);
+            console.log(endscore);
+            tt=0;
+            timeScorer.innerText=0;
             endScreen.classList.add("show");
             //alert("Game Over!");
             
         
     }
     },10); 
-   
-   
-    
-    //starts the timeer
-    let tt = 0
-    //console.log("works");
-    if (youlose !== true ){
-        let uptime = setInterval(function (){
-            tt += 1;
-            timeScorer.innerText= tt;
-        }, 500);
-    
 
-    }
-    var audio = new Audio("./sounds/gameMusic.wav");
-    audio.volume = .15;
-    audio.play();
     
-   
   
 };
 
     
  startButton.addEventListener("click", gameStart);
-//  document.addEventListener("keydown",jumpyJumperson);
- restartG.addEventListener("click", reSetG);
+ //document.addEventListener("keydown",jumpyJumperson);
  closeG.addEventListener("click", endGame);
